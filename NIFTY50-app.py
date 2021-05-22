@@ -95,7 +95,7 @@ def price_plot(symbol):
 
 num_company = st.sidebar.slider('Number of Companies', 1, 5)
 
-
+st.header('To see how the stock performed for the last few days - click show plots button')
 if st.button('Show Plots'):
     st.header('Stock Closing Price')
     for i in list(df_selected_sector.Symbol)[:num_company]:
@@ -104,7 +104,7 @@ if st.button('Show Plots'):
 user_input1 = st.number_input("enter a epochs value", 5)
 user_input2 = st.number_input("enter a batch_size", 64)
 
-
+st.header('To see how the stock will perform tomorrow - click this button')
 if st.button('ML model'):
  st.header('This model can be made even more accurate by increasing epoch to 25 and reducing batch size to 32. Note that, it will take more time to calculate')
  for H in  list(df_selected_sector[:5].Symbol)[:num_company]:
