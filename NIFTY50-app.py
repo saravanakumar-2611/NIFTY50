@@ -43,6 +43,7 @@ df_selected_sector = df[ (df['Sector'].isin(selected_sector)) ]
 
 if df_selected_sector.empty:
     st.write('enter a sector')
+    st.stop()
     sys.exit("dataframe is empty")
     
     
