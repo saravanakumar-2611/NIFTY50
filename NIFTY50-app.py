@@ -35,6 +35,7 @@ sector = df.groupby('Sector')
 
 # Sidebar - Sector selection
 sorted_sector_unique = sorted( df['Sector'].unique() )
+selected_sector = 0
 selected_sector = st.sidebar.multiselect('Sector', sorted_sector_unique, sorted_sector_unique)
 
 # Filtering data
@@ -106,7 +107,7 @@ user_input2 = st.number_input("enter a batch_size", 64)
 
 st.header('To see how the stock will perform tomorrow - click this button')
 if st.button('ML model'):
- st.header('This model can be made even more accurate by increasing epoch to 25 and reducing batch size to 32. Note that, it will take more time to calculate')
+ st.header('This model can be made even more accurate by increasing epoch to 25. Note that, it will take more time to calculate')
  for H in  list(df_selected_sector[:5].Symbol)[:num_company]:
   print(H)
 # Load Data
