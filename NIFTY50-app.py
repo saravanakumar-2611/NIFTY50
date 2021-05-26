@@ -36,7 +36,7 @@ sector = df.groupby('Sector')
 # Sidebar - Sector selection
 sorted_sector_unique = sorted( df['Sector'].unique() )
 selected_sector = 0
-selected_sector = st.sidebar.multiselect('Sector', sorted_sector_unique)
+selected_sector = st.multiselect('Sector', sorted_sector_unique)
 
 # Filtering data
 df_selected_sector = df[ (df['Sector'].isin(selected_sector)) ]
@@ -94,7 +94,7 @@ def price_plot(symbol):
   return st.pyplot(fig)
 
 
-num_company = st.sidebar.slider('Number of Companies', 1, 5)
+num_company = st.slider('Number of Companies', 1, 5)
 
 st.header('To see how the stock performed for the last few days - click show plots button')
 if st.button('Show Plots'):
