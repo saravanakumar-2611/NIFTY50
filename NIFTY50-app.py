@@ -36,7 +36,7 @@ sector = df.groupby('Sector')
 # Sidebar - Sector selection
 sorted_sector_unique = sorted( df['Sector'].unique() )
 selected_sector = 0
-selected_sector = st.multiselect('Sector', sorted_sector_unique)
+selected_sector = st.multiselect('Sector', sorted_sector_unique, sorted_sector_unique)
 
 # Filtering data
 df_selected_sector = df[ (df['Sector'].isin(selected_sector)) ]
@@ -100,7 +100,6 @@ st.header('To see how the stock performed for the last few days - click show plo
 if st.button('Show Plots'):
     st.header('Stock Closing Price')
     for i in list(df_selected_sector.Symbol)[:num_company]:
-        fig = 0
         price_plot(i)
 user_input1 = st.number_input("enter a epochs value", 5)
 user_input2 = st.number_input("enter a batch_size", 64)
